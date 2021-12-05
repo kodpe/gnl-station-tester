@@ -51,8 +51,8 @@ echo "#####################################################################"
 echo "                                                  Art by Donovan Bake"
 echo
 echo "\033[34m_____________________________NORMINETTE______________________________\033[0m"
-norminette get_next_line.c
-norminette get_next_line_utils.c
+norminette sq_get_next_line.c
+norminette sq_get_next_line_utils.c
 norminette get_next_line.h
 echo
 echo "\033[34m_________________________DIFF TEST & VALGRIND________________________\033[0m"
@@ -202,6 +202,6 @@ fi
 echo
 echo
 rm -f get_next_line.h
-rm -f get_next_line.c
-rm -f get_next_line_utils.c
+rm -f sq_get_next_line.c
+rm -f sq_get_next_line_utils.c
 rm -f ${NAME}
