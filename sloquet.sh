@@ -161,7 +161,7 @@ then
 	tail -n 1 ${path_out}log9
 else
 	echo "\033[31m9.KO \c\033[0m"
-	tail -n 5 ${path_out}log9
+	tail -n 1 ${path_out}log9
 fi
 echo
 # ---------- TEST 10 ----------
@@ -173,7 +173,7 @@ then
 	tail -n 1 ${path_out}log10
 else
 	echo "\033[31m10.KO \c\033[0m"
-	tail -n 5 ${path_out}log10
+	tail -n 1 ${path_out}log10
 fi
 echo
 # ---------- TEST 11 ----------
@@ -185,7 +185,7 @@ then
 	tail -n 1 ${path_out}log11
 else
 	echo "\033[31m11.KO \c\033[0m"
-	tail -n 5 ${path_out}log11
+	tail -n 1 ${path_out}log11
 fi
 echo
 # ---------- TEST 12 ----------
