@@ -3,4 +3,4 @@
 
 clone in your gnl repo then 'make'
 
-/!\ works only on linux
+/ ! \ works only on linux
