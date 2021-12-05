@@ -58,9 +58,9 @@ echo
 echo "\033[34m_________________________DIFF TEST & VALGRIND________________________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_1} 1> ${path_out}${out_1} 2> ${path_out}log1
-echo "\033[34m" && diff -s ${path_out}${out_1} ${path_test}${test_1} > /dev/null
 if cmp -s ${path_out}${out_1} ${path_test}${test_1}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_1} ${path_test}${test_1}
 	echo "\033[32m1.OK \c\033[0m"
 	tail -n 1 ${path_out}log1
 else
@@ -70,9 +70,9 @@ fi
 echo
 # ---------- TEST 2 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_2} 1> ${path_out}${out_2} 2> ${path_out}log2
-echo "\033[34m" && diff -s ${path_out}${out_2} ${path_test}${test_2} > /dev/null
 if cmp -s ${path_out}${out_2} ${path_test}${test_2}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_2} ${path_test}${test_2}
 	echo "\033[32m2.OK \c\033[0m"
 	tail -n 1 ${path_out}log2
 else
@@ -82,9 +82,9 @@ fi
 echo
 # ---------- TEST 3 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_3} 1> ${path_out}${out_3} 2> ${path_out}log3
-echo "\033[34m" && diff -s ${path_out}${out_3} ${path_test}${test_3} > /dev/null
 if cmp -s ${path_out}${out_3} ${path_test}${test_3}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_3} ${path_test}${test_3}
 	echo "\033[32m3.OK \c\033[0m"
 	tail -n 1 ${path_out}log3
 else
@@ -94,9 +94,9 @@ fi
 echo
 # ---------- TEST 4 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_4} 1> ${path_out}${out_4} 2> ${path_out}log4
-echo "\033[34m" && diff -s ${path_out}${out_4} ${path_test}${test_4} > /dev/null
 if cmp -s ${path_out}${out_4} ${path_test}${test_4}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_4} ${path_test}${test_4}
 	echo "\033[32m4.OK \c\033[0m"
 	tail -n 1 ${path_out}log4
 else
@@ -106,9 +106,9 @@ fi
 echo
 # ---------- TEST 5 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_5} 1> ${path_out}${out_5} 2> ${path_out}log5
-echo "\033[34m" && diff -s ${path_out}${out_5} ${path_test}${test_5} > /dev/null
 if cmp -s ${path_out}${out_5} ${path_test}${test_5}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_5} ${path_test}${test_5}
 	echo "\033[32m5.OK \c\033[0m"
 	tail -n 1 ${path_out}log5
 else
@@ -118,9 +118,9 @@ fi
 echo
 # ---------- TEST 6 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_6} 1> ${path_out}${out_6} 2> ${path_out}log6
-echo "\033[34m" && diff -s ${path_out}${out_6} ${path_test}${test_6} > /dev/null
 if cmp -s ${path_out}${out_6} ${path_test}${test_6}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_6} ${path_test}${test_6}
 	echo "\033[32m6.OK \c\033[0m"
 	tail -n 1 ${path_out}log6
 else
@@ -130,9 +130,9 @@ fi
 echo
 # ---------- TEST 7 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_7} 1> ${path_out}${out_7} 2> ${path_out}log7
-echo "\033[34m" && diff -s ${path_out}${out_7} ${path_test}${test_7} > /dev/null
 if cmp -s ${path_out}${out_7} ${path_test}${test_7}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_7} ${path_test}${test_7}
 	echo "\033[32m7.OK \c\033[0m"
 	tail -n 1 ${path_out}log7
 else
@@ -142,9 +142,9 @@ fi
 echo
 # ---------- TEST 8 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_8} 1> ${path_out}${out_8} 2> ${path_out}log8
-echo "\033[34m" && diff -s ${path_out}${out_8} ${path_test}${test_8} > /dev/null
 if cmp -s ${path_out}${out_8} ${path_test}${test_8}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_8} ${path_test}${test_8}
 	echo "\033[32m8.OK \c\033[0m"
 	tail -n 1 ${path_out}log8
 else
@@ -154,9 +154,9 @@ fi
 echo
 # ---------- TEST 9 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_9} 1> ${path_out}${out_9} 2> ${path_out}log9
-echo "\033[34m" && diff -s ${path_out}${out_9} ${path_test}${test_9} > /dev/null
 if cmp -s ${path_out}${out_9} ${path_test}${test_9}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_9} ${path_test}${test_9}
 	echo "\033[32m9.OK \c\033[0m"
 	tail -n 1 ${path_out}log9
 else
@@ -166,9 +166,9 @@ fi
 echo
 # ---------- TEST 10 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_10} 1> ${path_out}${out_10} 2> ${path_out}log10
-echo "\033[34m" && diff -s ${path_out}${out_10} ${path_test}${test_10} > /dev/null
 if cmp -s ${path_out}${out_10} ${path_test}${test_10}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_10} ${path_test}${test_10}
 	echo "\033[32m10.OK \c\033[0m"
 	tail -n 1 ${path_out}log10
 else
@@ -178,9 +178,9 @@ fi
 echo
 # ---------- TEST 11 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_11} 1> ${path_out}${out_11} 2> ${path_out}log11
-echo "\033[34m" && diff -s ${path_out}${out_11} ${path_test}${test_11} > /dev/null
 if cmp -s ${path_out}${out_11} ${path_test}${test_11}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_11} ${path_test}${test_11}
 	echo "\033[32m11.OK \c\033[0m"
 	tail -n 1 ${path_out}log11
 else
@@ -190,14 +190,14 @@ fi
 echo
 # ---------- TEST 12 ----------
 valgrind ${VFLAGS} ./${NAME} ${path_test}${test_12} 1> ${path_out}${out_12} 2> ${path_out}log12
-echo "\033[34m" && diff -s ${path_out}${out_12} ${path_test}${test_12} 2> /dev/null
 if cmp -s ${path_out}${out_12} ${path_test}${test_12}
 then
+	echo "\033[34m" && diff -s ${path_out}${out_12} ${path_test}${test_12}
 	echo "\033[32m12.OK \c\033[0m"
 	tail -n 1 ${path_out}log12
 else
 	echo "\033[31m12.KO \c\033[0m"
-	tail -n 5 ${path_out}log12
+	tail -n 1 ${path_out}log12
 fi
 echo
 echo
