@@ -62,8 +62,10 @@ echo "\033[34m" && diff -s ${path_out}${out_1} ${path_test}${test_1}
 if cmp -s ${path_out}${out_1} ${path_test}${test_1}
 then
 	echo "\033[32m1.OK \c\033[0m"
+	tail -n 1 ${path_out}log1
 else
 	echo "\033[31m1.KO \c\033[0m"
+	tail -n 1 ${path_out}log1
 fi
 echo
 # ---------- TEST 2 ----------
@@ -72,8 +74,10 @@ echo "\033[34m" && diff -s ${path_out}${out_2} ${path_test}${test_2}
 if cmp -s ${path_out}${out_2} ${path_test}${test_2}
 then
 	echo "\033[32m2.OK \c\033[0m"
+	tail -n 1 ${path_out}log2
 else
 	echo "\033[31m2.KO \c\033[0m"
+	tail -n 1 ${path_out}log2
 fi
 echo
 # ---------- TEST 3 ----------
@@ -82,8 +86,10 @@ echo "\033[34m" && diff -s ${path_out}${out_3} ${path_test}${test_3}
 if cmp -s ${path_out}${out_3} ${path_test}${test_3}
 then
 	echo "\033[32m3.OK \c\033[0m"
+	tail -n 1 ${path_out}log3
 else
 	echo "\033[31m3.KO \c\033[0m"
+	tail -n 1 ${path_out}log3
 fi
 echo
 # ---------- TEST 4 ----------
@@ -92,8 +98,10 @@ echo "\033[34m" && diff -s ${path_out}${out_4} ${path_test}${test_4}
 if cmp -s ${path_out}${out_4} ${path_test}${test_4}
 then
 	echo "\033[32m4.OK \c\033[0m"
+	tail -n 1 ${path_out}log4
 else
 	echo "\033[31m4.KO \c\033[0m"
+	tail -n 1 ${path_out}log4
 fi
 echo
 # ---------- TEST 5 ----------
@@ -102,8 +110,10 @@ echo "\033[34m" && diff -s ${path_out}${out_5} ${path_test}${test_5}
 if cmp -s ${path_out}${out_5} ${path_test}${test_5}
 then
 	echo "\033[32m5.OK \c\033[0m"
+	tail -n 1 ${path_out}log5
 else
 	echo "\033[31m5.KO \c\033[0m"
+	tail -n 1 ${path_out}log5
 fi
 echo
 # ---------- TEST 6 ----------
@@ -112,8 +122,10 @@ echo "\033[34m" && diff -s ${path_out}${out_6} ${path_test}${test_6}
 if cmp -s ${path_out}${out_6} ${path_test}${test_6}
 then
 	echo "\033[32m6.OK \c\033[0m"
+	tail -n 1 ${path_out}log6
 else
 	echo "\033[31m6.KO \c\033[0m"
+	tail -n 1 ${path_out}log6
 fi
 echo
 # ---------- TEST 7 ----------
@@ -122,8 +134,10 @@ echo "\033[34m" && diff -s ${path_out}${out_7} ${path_test}${test_7}
 if cmp -s ${path_out}${out_7} ${path_test}${test_7}
 then
 	echo "\033[32m7.OK \c\033[0m"
+	tail -n 1 ${path_out}log7
 else
 	echo "\033[31m7.KO \c\033[0m"
+	tail -n 1 ${path_out}log7
 fi
 echo
 # ---------- TEST 8 ----------
@@ -132,8 +146,10 @@ echo "\033[34m" && diff -s ${path_out}${out_8} ${path_test}${test_8}
 if cmp -s ${path_out}${out_8} ${path_test}${test_8}
 then
 	echo "\033[32m8.OK \c\033[0m"
+	tail -n 1 ${path_out}log8
 else
 	echo "\033[31m8.KO \c\033[0m"
+	tail -n 1 ${path_out}log8
 fi
 echo
 # ---------- TEST 9 ----------
@@ -142,8 +158,10 @@ echo "\033[34m" && diff -s ${path_out}${out_9} ${path_test}${test_9}
 if cmp -s ${path_out}${out_9} ${path_test}${test_9}
 then
 	echo "\033[32m9.OK \c\033[0m"
+	tail -n 1 ${path_out}log9
 else
 	echo "\033[31m9.KO \c\033[0m"
+	tail -n 1 ${path_out}log9
 fi
 echo
 # ---------- TEST 10 ----------
@@ -152,8 +170,10 @@ echo "\033[34m" && diff -s ${path_out}${out_10} ${path_test}${test_10}
 if cmp -s ${path_out}${out_10} ${path_test}${test_10}
 then
 	echo "\033[32m10.OK \c\033[0m"
+	tail -n 1 ${path_out}log10
 else
 	echo "\033[31m10.KO \c\033[0m"
+	tail -n 1 ${path_out}log10
 fi
 echo
 # ---------- TEST 11 ----------
@@ -162,8 +182,10 @@ echo "\033[34m" && diff -s ${path_out}${out_11} ${path_test}${test_11}
 if cmp -s ${path_out}${out_11} ${path_test}${test_11}
 then
 	echo "\033[32m11.OK \c\033[0m"
+	tail -n 1 ${path_out}log11
 else
 	echo "\033[31m11.KO \c\033[0m"
+	tail -n 1 ${path_out}log11
 fi
 echo
 # ---------- TEST 12 ----------
@@ -172,8 +194,10 @@ echo "\033[34m" && diff -s ${path_out}${out_12} ${path_test}${test_12}
 if cmp -s ${path_out}${out_12} ${path_test}${test_12}
 then
 	echo "\033[32m12.OK \c\033[0m"
+	tail -n 1 ${path_out}log12
 else
 	echo "\033[31m12.KO \c\033[0m"
+	tail -n 1 ${path_out}log12
 fi
 echo
 echo
