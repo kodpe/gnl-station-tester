@@ -38,14 +38,8 @@ NAME4="t4200000.esq"
 # valgrind
 VFLAGS="-s -q --track-origins=yes --leak-check=full --show-leak-kinds=all"
 # directory
-rm -rf po1
-rm -rf po2
-rm -rf po3
-rm -rf po4
-mkdir po1
-mkdir po2
-mkdir po3
-mkdir po4
+rm -rf ${po1} ${po2} ${po3} ${po4}
+mkdir ${po1} ${po2} ${po3} ${po4}
 #
 clear
 echo "\033[34m"
