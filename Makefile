@@ -15,8 +15,8 @@ exec: $(SRC)
 
 setup : clean
 	git fetch --all
-	git reset --hard origin/master
-	git pull origin master
+	git reset --hard
+	git pull
 	@cp ../get_next_line.h ./get_next_line.h
 	@cp ../get_next_line.c ./sq_get_next_line.c
 	@cp ../get_next_line_utils.c ./sq_get_next_line_utils.c
