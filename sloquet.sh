@@ -69,9 +69,9 @@ echo
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 0__________________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
-if cmp -s ${po0}${out_1} ${path_test}${test_1}
+if cmp -s ${po0}${out_1} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_1} ${path_test}${test_1}
+	echo "\033[34m" && diff -s ${po0}${out_1} ${path_test}${test_5}
 	echo "\033[32m1.OK \c\033[0m"
 	tail -n 1 ${po0}log1
 else
@@ -81,9 +81,9 @@ fi
 echo
 # ---------- TEST 2 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
-if cmp -s ${po0}${out_2} ${path_test}${test_2}
+if cmp -s ${po0}${out_2} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_2} ${path_test}${test_2}
+	echo "\033[34m" && diff -s ${po0}${out_2} ${path_test}${test_5}
 	echo "\033[32m2.OK \c\033[0m"
 	tail -n 1 ${po0}log2
 else
@@ -93,9 +93,9 @@ fi
 echo
 # ---------- TEST 3 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_3} 1> ${po0}${out_3} 2> ${po0}log3
-if cmp -s ${po0}${out_3} ${path_test}${test_3}
+if cmp -s ${po0}${out_3} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_3} ${path_test}${test_3}
+	echo "\033[34m" && diff -s ${po0}${out_3} ${path_test}${test_5}
 	echo "\033[32m3.OK \c\033[0m"
 	tail -n 1 ${po0}log3
 else
@@ -105,9 +105,9 @@ fi
 echo
 # ---------- TEST 4 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_4} 1> ${po0}${out_4} 2> ${po0}log4
-if cmp -s ${po0}${out_4} ${path_test}${test_4}
+if cmp -s ${po0}${out_4} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_4} ${path_test}${test_4}
+	echo "\033[34m" && diff -s ${po0}${out_4} ${path_test}${test_5}
 	echo "\033[32m4.OK \c\033[0m"
 	tail -n 1 ${po0}log4
 else
