@@ -1,5 +1,5 @@
-# 42test_gnl_station_2021
-42 get next line linux tester
+# 42test_gnl_station_linux_2021
+42 get next line tester
 
 clone in your gnl repo then "make"
 
