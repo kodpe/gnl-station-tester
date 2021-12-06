@@ -185,6 +185,7 @@ else
 	tail -n 1 ${po1}log10
 fi
 echo
+:'
 # ---------- TEST 11 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_11} 1> ${po1}${out_11} 2> ${po1}log11
 if cmp -s ${po1}${out_11} ${path_test}${test_11}
@@ -196,7 +197,8 @@ else
 	echo "\033[31m11.KO \c\033[0m"
 	tail -n 1 ${po1}log11
 fi
-echo
+echo'
+:'
 # ---------- TEST 12 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_12} 1> ${po1}${out_12} 2> ${po1}log12
 if cmp -s ${po1}${out_12} ${path_test}${test_12}
@@ -208,7 +210,7 @@ else
 	echo "\033[31m12.KO \c\033[0m"
 	tail -n 1 ${po1}log12
 fi
-echo
+echo'
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 42_________________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_1} 1> ${po2}${out_1} 2> ${po2}log1
@@ -475,6 +477,7 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
+:'
 # ---------- TEST 11 ----------
 valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_11} 1> ${po3}${out_11} 2> ${po3}log11
 if cmp -s ${po3}${out_11} ${path_test}${test_11}
@@ -486,7 +489,8 @@ else
 	echo "\033[31m11.KO \c\033[0m"
 	tail -n 1 ${po3}log11
 fi
-echo
+echo'
+:'
 # ---------- TEST 12 ----------
 valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_12} 1> ${po3}${out_12} 2> ${po3}log12
 if cmp -s ${po3}${out_12} ${path_test}${test_12}
@@ -498,7 +502,7 @@ else
 	echo "\033[31m12.KO \c\033[0m"
 	tail -n 1 ${po3}log12
 fi
-echo
+echo'
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 4.200.000__________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME4} ${path_test}${test_1} 1> ${po4}${out_1} 2> ${po4}log1
@@ -619,6 +623,7 @@ else
 	echo "\033[31m10.KO \c\033[0m"
 	tail -n 1 ${po4}log10
 fi
+:'
 echo
 # ---------- TEST 11 ----------
 valgrind ${VFLAGS} ./${NAME4} ${path_test}${test_11} 1> ${po4}${out_11} 2> ${po4}log11
@@ -631,7 +636,8 @@ else
 	echo "\033[31m11.KO \c\033[0m"
 	tail -n 1 ${po4}log11
 fi
-echo
+echo'
+:'
 # ---------- TEST 12 ----------
 valgrind ${VFLAGS} ./${NAME4} ${path_test}${test_12} 1> ${po4}${out_12} 2> ${po4}log12
 if cmp -s ${po4}${out_12} ${path_test}${test_12}
@@ -643,7 +649,7 @@ else
 	echo "\033[31m12.KO \c\033[0m"
 	tail -n 1 ${po4}log12
 fi
-echo
+echo'
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
