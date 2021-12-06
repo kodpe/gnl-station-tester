@@ -649,3 +649,4 @@ rm -f get_next_line.h
 rm -f sq_get_next_line.c
 rm -f sq_get_next_line_utils.c
 rm -f *.esq
+exit 0
