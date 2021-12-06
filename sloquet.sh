@@ -502,7 +502,7 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
-echo "END"
+echo "END S"
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
