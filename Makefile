@@ -1,17 +1,20 @@
-NAME 		= 	aexec
+CC 			= 	gcc
+
+CFG			= 	-Wall -Wextra -Werror -I. -pthread
 
 SRC    	    = 	sq_main.c sq_get_next_line.c sq_get_next_line_utils.c 
 
-CC 			= 	gcc
+all : setup exec test
 
-CFLAGS 		= 	-Wall -Wextra -Werror -I. -D BUFFER_SIZE=42 -pthread
+exec: $(SRC)
+	$(CC) -o t0.esq $^ $(CFG) -D BUFFER_SIZE=0
+	$(CC) -o t1.esq $^ $(CFG) -D BUFFER_SIZE=1
+	$(CC) -o t2.esq $^ $(CFG) -D BUFFER_SIZE=2
+	$(CC) -o t42.esq $^ $(CFG) -D BUFFER_SIZE=42
+	$(CC) -o t42000.esq $^ $(CFG) -D BUFFER_SIZE=42000
+	$(CC) -o t4200000.esq $^ $(CFG) -D BUFFER_SIZE=4200000
 
-all : clean setup $(NAME) test
-
-$(NAME): $(SRC)
-	$(CC) -o $(NAME) $^ $(CFLAGS)
-
-setup :
+setup : clean
 	@cp ../get_next_line.h ./get_next_line.h
 	@cp ../get_next_line.c ./sq_get_next_line.c
 	@cp ../get_next_line_utils.c ./sq_get_next_line_utils.c
@@ -25,6 +28,6 @@ clean :
 	@rm -f get_next_line.h
 	@rm -f sq_get_next_line.c
 	@rm -f sq_get_next_line_utils.c
-	@rm -f $(NAME)
+	@rm -f *.esq
 
-.PHONY : all setup test clean 
+.PHONY : all exec setup test clean 
