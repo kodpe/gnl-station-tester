@@ -8,7 +8,6 @@ all : setup exec test
 
 exec: $(SRC)
 	$(CC) -o t0.esq $^ $(CFG) -D BUFFER_SIZE=0
-	$(CC) -o t1.esq $^ $(CFG) -D BUFFER_SIZE=1
 	$(CC) -o t2.esq $^ $(CFG) -D BUFFER_SIZE=2
 	$(CC) -o t42.esq $^ $(CFG) -D BUFFER_SIZE=42
 	$(CC) -o t42000.esq $^ $(CFG) -D BUFFER_SIZE=42000
