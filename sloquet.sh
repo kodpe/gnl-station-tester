@@ -44,6 +44,7 @@ rm -rf ${po0} ${po1} ${po2} ${po3} ${po4}
 mkdir ${po0} ${po1} ${po2} ${po3} ${po4}
 #
 clear
+echo "Hello"
 echo "\033[34m"
 echo "                                                                     "
 echo "               _-====-__-======-__-========-_____-============-__    "
