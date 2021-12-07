@@ -57,7 +57,7 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 19:45                        Art by Donovan Bake"
+echo "Last update 07/12/21 19:57                        Art by Donovan Bake"
 echo
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 0____________________________\033[0m"
 # ---------- TEST 1 ----------
