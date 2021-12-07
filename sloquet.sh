@@ -57,9 +57,10 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 19:57                        Art by Donovan Bake"
+echo "Last update 07/12/21 20:00                        Art by Donovan Bake"
 echo
-echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 0____________________________\033[0m"
+echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "\033[34m BUFFER SIZE = 0\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
 if cmp -s ${po0}${out_1} ${path_test}${test_5}
@@ -83,7 +84,8 @@ else
 	tail -n 1 ${po0}log2
 fi
 echo
-echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 2____________________________\033[0m"
+echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "\033[34m BUFFER SIZE = 2 \033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_1} 1> ${po1}${out_1} 2> ${po1}log1
 if cmp -s ${po1}${out_1} ${path_test}${test_1}
@@ -184,7 +186,8 @@ else
 	tail -n 1 ${po1}log9
 fi
 echo
-echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 42___________________________\033[0m"
+echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "\033[34m BUFFER SIZE = 42 \033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_1} 1> ${po2}${out_1} 2> ${po2}log1
 if cmp -s ${po2}${out_1} ${path_test}${test_1}
@@ -306,7 +309,8 @@ else
 	tail -n 1 ${po2}log12
 fi
 echo
-echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 42.000________________________\033[0m"
+echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "\033[34m BUFFER SIZE = 42.000 \033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_1} 1> ${po3}${out_1} 2> ${po3}log1
 if cmp -s ${po3}${out_1} ${path_test}${test_1}
