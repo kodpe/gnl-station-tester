@@ -222,18 +222,6 @@ else
 	tail -n 1 ${po1}log9
 fi
 echo
-# ---------- TEST 10 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_10} 1> ${po1}${out_10} 2> ${po1}log10
-if cmp -s ${po1}${out_10} ${path_test}${test_10}
-then
-	echo "\033[34m" && diff -s ${po1}${out_10} ${path_test}${test_10}
-	echo "\033[32m10.OK \c\033[0m"
-	tail -n 1 ${po1}log10
-else
-	echo "\033[31m10.KO \c\033[0m"
-	tail -n 1 ${po1}log10
-fi
-echo
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 42_________________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_1} 1> ${po2}${out_1} 2> ${po2}log1
