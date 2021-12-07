@@ -14,9 +14,9 @@ exec: $(SRC)
 #@$(CC) -o t4200000.esq $^ $(CFG) -D BUFFER_SIZE=4200000
 
 setup : clean
-	git fetch --all
-	git reset --hard
-	git pull
+	@git fetch --all
+	@git reset --hard
+	@git pull
 	@cp ../get_next_line.h ./get_next_line.h
 	@cp ../get_next_line.c ./sq_get_next_line.c
 	@cp ../get_next_line_utils.c ./sq_get_next_line_utils.c
@@ -29,5 +29,7 @@ clean :
 	@rm -f sq_get_next_line.c
 	@rm -f sq_get_next_line_utils.c
 	@rm -f *.esq
+co : clean
+	@rm -rf sqtest_out_*
 
-.PHONY : all exec setup test clean 
+.PHONY : all exec setup test clean co
