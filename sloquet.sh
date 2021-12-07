@@ -57,7 +57,7 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 16:58                        Art by Donovan Bake"
+echo "Last update 07/12/21 17:08                        Art by Donovan Bake"
 echo
 echo "\033[34m_____________________________NORMINETTE______________________________\033[0m"
 norminette ../get_next_line.c
@@ -99,18 +99,6 @@ then
 else
 	echo "\033[31m3.KO \c\033[0m"
 	tail -n 1 ${po0}log3
-fi
-echo
-# ---------- TEST 4 ----------
-valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_4} 1> ${po0}${out_4} 2> ${po0}log4
-if cmp -s ${po0}${out_4} ${path_test}${test_5}
-then
-	echo "\033[34m" && diff -s ${po0}${out_4} ${path_test}${test_5}
-	echo "\033[32m4.OK \c\033[0m"
-	tail -n 1 ${po0}log4
-else
-	echo "\033[31m4.KO \c\033[0m"
-	tail -n 1 ${po0}log4
 fi
 echo
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 2__________________\033[0m"
@@ -489,6 +477,7 @@ else
 fi
 echo
 echo "END"
+echo
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
