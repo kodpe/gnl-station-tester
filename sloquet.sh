@@ -464,8 +464,21 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
-echo "END"
-echo
+echo "\033[34m"
+echo "Test completed"
+echo "Test 1 : brouette.txt"
+echo "Test 2 : lol.txt"
+echo "Test 3 : oneline.txt"
+echo "Test 4 : uuu.txt"
+echo "Test 5 : empty.txt"
+echo "Test 6 : newlineworld.txt"
+echo "Test 7 : onechar.txt"
+echo "Test 8 : twochar.txt"
+echo "Test 9 : linew.txt"
+echo "Test 10 : b.txt"
+echo "Test 11 : bg.txt"
+echo "Test 12 : bigben.txt"
+echo"\033[0m"
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
