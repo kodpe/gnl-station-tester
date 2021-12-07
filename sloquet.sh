@@ -478,7 +478,7 @@ echo "Test 9 : linew.txt"
 echo "Test 10 : b.txt"
 echo "Test 11 : bg.txt"
 echo "Test 12 : bigben.txt"
-echo"\033[0m"
+echo "\033[0m"
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
