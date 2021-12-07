@@ -64,7 +64,7 @@ echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 0_______________
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
 if cmp -s ${po0}${out_1} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_1} ${path_test}${test_5}
+#echo "\033[34m" && diff -s ${po0}${out_1} ${path_test}${test_5}
 	echo "\033[32m1.OK \c\033[0m"
 	tail -n 1 ${po0}log1
 else
@@ -76,7 +76,7 @@ echo
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
 if cmp -s ${po0}${out_2} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po0}${out_2} ${path_test}${test_5}
+#echo "\033[34m" && diff -s ${po0}${out_2} ${path_test}${test_5}
 	echo "\033[32m2.OK \c\033[0m"
 	tail -n 1 ${po0}log2
 else
@@ -89,7 +89,7 @@ echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 2_______________
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_1} 1> ${po1}${out_1} 2> ${po1}log1
 if cmp -s ${po1}${out_1} ${path_test}${test_1}
 then
-	echo "\033[34m" && diff -s ${po1}${out_1} ${path_test}${test_1}
+#echo "\033[34m" && diff -s ${po1}${out_1} ${path_test}${test_1}
 	echo "\033[32m1.OK \c\033[0m"
 	tail -n 1 ${po1}log1
 else
@@ -101,7 +101,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_2} 1> ${po1}${out_2} 2> ${po1}log2
 if cmp -s ${po1}${out_2} ${path_test}${test_2}
 then
-	echo "\033[34m" && diff -s ${po1}${out_2} ${path_test}${test_2}
+#echo "\033[34m" && diff -s ${po1}${out_2} ${path_test}${test_2}
 	echo "\033[32m2.OK \c\033[0m"
 	tail -n 1 ${po1}log2
 else
@@ -113,7 +113,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_3} 1> ${po1}${out_3} 2> ${po1}log3
 if cmp -s ${po1}${out_3} ${path_test}${test_3}
 then
-	echo "\033[34m" && diff -s ${po1}${out_3} ${path_test}${test_3}
+#echo "\033[34m" && diff -s ${po1}${out_3} ${path_test}${test_3}
 	echo "\033[32m3.OK \c\033[0m"
 	tail -n 1 ${po1}log3
 else
@@ -125,7 +125,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_4} 1> ${po1}${out_4} 2> ${po1}log4
 if cmp -s ${po1}${out_4} ${path_test}${test_4}
 then
-	echo "\033[34m" && diff -s ${po1}${out_4} ${path_test}${test_4}
+#echo "\033[34m" && diff -s ${po1}${out_4} ${path_test}${test_4}
 	echo "\033[32m4.OK \c\033[0m"
 	tail -n 1 ${po1}log4
 else
@@ -137,7 +137,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_5} 1> ${po1}${out_5} 2> ${po1}log5
 if cmp -s ${po1}${out_5} ${path_test}${test_5}
 then
-	echo "\033[34m" && diff -s ${po1}${out_5} ${path_test}${test_5}
+#echo "\033[34m" && diff -s ${po1}${out_5} ${path_test}${test_5}
 	echo "\033[32m5.OK \c\033[0m"
 	tail -n 1 ${po1}log5
 else
@@ -149,7 +149,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_6} 1> ${po1}${out_6} 2> ${po1}log6
 if cmp -s ${po1}${out_6} ${path_test}${test_6}
 then
-	echo "\033[34m" && diff -s ${po1}${out_6} ${path_test}${test_6}
+#echo "\033[34m" && diff -s ${po1}${out_6} ${path_test}${test_6}
 	echo "\033[32m6.OK \c\033[0m"
 	tail -n 1 ${po1}log6
 else
@@ -161,7 +161,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_7} 1> ${po1}${out_7} 2> ${po1}log7
 if cmp -s ${po1}${out_7} ${path_test}${test_7}
 then
-	echo "\033[34m" && diff -s ${po1}${out_7} ${path_test}${test_7}
+#echo "\033[34m" && diff -s ${po1}${out_7} ${path_test}${test_7}
 	echo "\033[32m7.OK \c\033[0m"
 	tail -n 1 ${po1}log7
 else
@@ -173,7 +173,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_8} 1> ${po1}${out_8} 2> ${po1}log8
 if cmp -s ${po1}${out_8} ${path_test}${test_8}
 then
-	echo "\033[34m" && diff -s ${po1}${out_8} ${path_test}${test_8}
+#echo "\033[34m" && diff -s ${po1}${out_8} ${path_test}${test_8}
 	echo "\033[32m8.OK \c\033[0m"
 	tail -n 1 ${po1}log8
 else
@@ -185,7 +185,7 @@ echo
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_9} 1> ${po1}${out_9} 2> ${po1}log9
 if cmp -s ${po1}${out_9} ${path_test}${test_9}
 then
-	echo "\033[34m" && diff -s ${po1}${out_9} ${path_test}${test_9}
+#echo "\033[34m" && diff -s ${po1}${out_9} ${path_test}${test_9}
 	echo "\033[32m9.OK \c\033[0m"
 	tail -n 1 ${po1}log9
 else
@@ -489,4 +489,4 @@ rm -f get_next_line.h
 rm -f sq_get_next_line.c
 rm -f sq_get_next_line_utils.c
 rm -f *.esq
-rm -rf sqtest_out_*
+rm -rf sqtest_out*
