@@ -71,7 +71,6 @@ else
 	echo "\033[31m1.KO \c\033[0m"
 	tail -n 1 ${po0}log1
 fi
-echo
 # ---------- TEST 2 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
 if cmp -s ${po0}${out_2} ${path_test}${test_5}
@@ -96,7 +95,6 @@ else
 	echo "\033[31m1.KO \c\033[0m"
 	tail -n 1 ${po1}log1
 fi
-echo
 # ---------- TEST 2 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_2} 1> ${po1}${out_2} 2> ${po1}log2
 if cmp -s ${po1}${out_2} ${path_test}${test_2}
@@ -108,7 +106,6 @@ else
 	echo "\033[31m2.KO \c\033[0m"
 	tail -n 1 ${po1}log2
 fi
-echo
 # ---------- TEST 3 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_3} 1> ${po1}${out_3} 2> ${po1}log3
 if cmp -s ${po1}${out_3} ${path_test}${test_3}
@@ -120,7 +117,6 @@ else
 	echo "\033[31m3.KO \c\033[0m"
 	tail -n 1 ${po1}log3
 fi
-echo
 # ---------- TEST 4 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_4} 1> ${po1}${out_4} 2> ${po1}log4
 if cmp -s ${po1}${out_4} ${path_test}${test_4}
@@ -132,7 +128,6 @@ else
 	echo "\033[31m4.KO \c\033[0m"
 	tail -n 1 ${po1}log4
 fi
-echo
 # ---------- TEST 5 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_5} 1> ${po1}${out_5} 2> ${po1}log5
 if cmp -s ${po1}${out_5} ${path_test}${test_5}
@@ -144,7 +139,6 @@ else
 	echo "\033[31m5.KO \c\033[0m"
 	tail -n 1 ${po1}log5
 fi
-echo
 # ---------- TEST 6 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_6} 1> ${po1}${out_6} 2> ${po1}log6
 if cmp -s ${po1}${out_6} ${path_test}${test_6}
@@ -156,7 +150,6 @@ else
 	echo "\033[31m6.KO \c\033[0m"
 	tail -n 1 ${po1}log6
 fi
-echo
 # ---------- TEST 7 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_7} 1> ${po1}${out_7} 2> ${po1}log7
 if cmp -s ${po1}${out_7} ${path_test}${test_7}
@@ -168,7 +161,6 @@ else
 	echo "\033[31m7.KO \c\033[0m"
 	tail -n 1 ${po1}log7
 fi
-echo
 # ---------- TEST 8 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_8} 1> ${po1}${out_8} 2> ${po1}log8
 if cmp -s ${po1}${out_8} ${path_test}${test_8}
@@ -180,7 +172,6 @@ else
 	echo "\033[31m8.KO \c\033[0m"
 	tail -n 1 ${po1}log8
 fi
-echo
 # ---------- TEST 9 ----------
 valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_9} 1> ${po1}${out_9} 2> ${po1}log9
 if cmp -s ${po1}${out_9} ${path_test}${test_9}
