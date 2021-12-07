@@ -1,5 +1,5 @@
 # gnl test
-path_test=sqtest/
+path_test=test/
 test_1=brouette.txt
 test_2=lol.txt
 test_3=oneline.txt
@@ -26,22 +26,20 @@ out_10=out_gnl_10.txt
 out_11=out_gnl_11.txt
 out_12=out_gnl_12.txt
 # path_out
-po0=sqtest_out_0/
-po1=sqtest_out_2/
-po2=sqtest_out_42/
-po3=sqtest_out_42000/
-po4=sqtest_out_4200000/
+po0=out_0/
+po1=out_2/
+po2=out_42/
+po3=out_42000/
 # exec
 NAME0="t0.esq"
 NAME1="t2.esq"
 NAME2="t42.esq"
 NAME3="t42000.esq"
-NAME4="t4200000.esq"
 # valgrind
 VFLAGS="-s -q --track-origins=yes --leak-check=full --show-leak-kinds=all"
 # directory
-rm -rf ${po0} ${po1} ${po2} ${po3} ${po4}
-mkdir ${po0} ${po1} ${po2} ${po3} ${po4}
+rm -rf ${po0} ${po1} ${po2} ${po3}
+mkdir ${po0} ${po1} ${po2} ${po3}
 #
 clear
 echo "\033[34m"
@@ -59,7 +57,7 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 16:38                        Art by Donovan Bake"
+echo "Last update 07/12/21 16:58                        Art by Donovan Bake"
 echo
 echo "\033[34m_____________________________NORMINETTE______________________________\033[0m"
 norminette ../get_next_line.c
