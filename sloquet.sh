@@ -411,7 +411,7 @@ else
 fi
 echo
 echo "\033[34m_______________________________________________________________________________\033[0m"
-NORM=$(norminette ../$1 2>&1)
+NORM=$(norminette ../*.c *.h $1 2>&1)
 if echo "$NORM" | grep -qE '(Error|Warning)'
 then
 	echo "\033[31mKO norminette \c\033[0m"
