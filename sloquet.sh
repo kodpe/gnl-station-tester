@@ -59,11 +59,6 @@ echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
 echo "Last update 07/12/21 18:27                        Art by Donovan Bake"
 echo
-echo "\033[34m________________________________NORMINETTE_____________________________________\033[0m"
-norminette ../get_next_line.c
-norminette ../get_next_line_utils.c
-norminette ../get_next_line.h
-echo
 echo "\033[34m_______________DIFF TEST & VALGRIND BUFFER SIZE = 0____________________________\033[0m"
 # ---------- TEST 1 ----------
 valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
@@ -464,18 +459,18 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
+echo "\033[34m_______________________________________________________________________________\033[0m"
 NORM=$(norminette ../$1 2>&1)
 if echo "$NORM" | grep -qE '(Error|Warning)'
 then
-	echo "\033[31mnorminette KO \c\033[0m"
+	echo "\033[31mKO norminette \c\033[0m"
 	echo
 	echo "$NORM" | grep -E '(Error|Warning)' >> log_norminette
 else
-	echo "\033[32mnorminette OK \c\033[0m"
+	echo "\033[32mOK norminette \c\033[0m"
 	echo
 fi
 echo "\033[34m"
-echo "Test completed"
 echo "Test 1 : brouette.txt"
 echo "Test 2 : lol.txt            \|/          (__)               "
 echo "Test 3 : oneline.txt             '(------(oo)       mooooh !"
@@ -494,3 +489,4 @@ rm -f get_next_line.h
 rm -f sq_get_next_line.c
 rm -f sq_get_next_line_utils.c
 rm -f *.esq
+rm -rf sqtest_out_*
