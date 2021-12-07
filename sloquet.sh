@@ -57,7 +57,7 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 17:08                        Art by Donovan Bake"
+echo "Last update 07/12/21 17:25                        Art by Donovan Bake"
 echo
 echo "\033[34m_____________________________NORMINETTE______________________________\033[0m"
 norminette ../get_next_line.c
