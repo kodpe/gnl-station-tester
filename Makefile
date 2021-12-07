@@ -31,5 +31,6 @@ clean :
 	@rm -f *.esq
 fco : clean
 	@rm -rf out_*
+	@rm -f log_norminette
 
 .PHONY : all exec setup test clean fco
