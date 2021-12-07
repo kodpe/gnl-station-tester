@@ -1,6 +1,26 @@
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta enim ut purus sodales dictum sit amet ut justo. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque aliquet tortor elementum, congue ante sit amet, congue eros. Nullam aliquet magna sed ante facilisis, ut mattis urna condimentum. Ut semper at ipsum nec volutpat. Nam dignissim accumsan massa a facilisis. Praesent placerat aliquet laoreet. Praesent finibus enim nisi, rhoncus sagittis nunc luctus non.
 
-Phasellus dignissim tincidunt suscipit. Morbi vehicula volutpat magna, in ultricies felis elementum in. Sed vitae dolor vulputate, sodales tellus ut, maximus leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla imperdiet justo ut nisl maximus semper. Quisque ut leo quis quam congue pretium eget vel erat. Pellentesque finibus lectus sed odio ullamcorper, non blandit nunc fringilla. Cras dictum, ipsum et sollicitudin porttitor, arcu nunc facilisis est, vel molestie tellus erat rhoncus ante. Nullam vestibulum neque quis est mollis, eget maximus purus viverra. Phasellus in tristique elit. Sed fringilla, sapien eget fermentum fermentum, odio massa tempus odio, a commodo leo nunc at dolor. Ut maximus porttitor elit, vel laoreet ipsum. Mauris sapien tortor, scelerisque malesuada viverra in, fermentum sit amet dui. Aliquam tincidunt eros pellentesque vehicula feugiat. Aliquam dictum neque augue, porta pretium eros sodales ac. Suspendisse et felis at lacus semper tristique
-/
-/ /
-/
+----------------------------------------------------------------------
+
+ ^^      ..                                       ..
+             []                                       []
+           .:[]:_          ^^                       ,:[]:.
+         .: :[]: :-.                             ,-: :[]: :.
+       .: : :[]: : :`._                       ,.': : :[]: : :.
+     .: : : :[]: : : : :-._               _,-: : : : :[]: : : :.
+ _..: : : : :[]: : : : : : :-._________.-: : : : : : :[]: : : : :-._
+ _:_:_:_:_:_:[]:_:_:_:_:_:_:_:_:_:_:_:_:_:_:_:_:_:_:_:[]:_:_:_:_:_:_
+ !!!!!!!!!!!![]!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!![]!!!!!!!!!!!!!
+ ^^^^^^^^^^^^[]^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[]^^^^^^^^^^^^^
+             []                                       []
+             []                                       []
+             []                                       []
+  ~~^-~^_~^~/  \~^-~^~_~^-~_^~-^~_^~~-^~_~^~-~_~-^~_^/  \~^-~_~^-~~-
+ ~ _~~- ~^-^~-^~~- ^~_^-^~~_ -~^_ -~_-~~^- _~~_~-^_ ~^-^~~-_^-~ ~^
+    ~ ^- _~~_-  ~~ _ ~  ^~  - ~~^ _ -  ^~-  ~ _  ~~^  - ~_   - ~^_~
+      ~-  ^_  ~^ -  ^~ _ - ~^~ _   _~^~-  _ ~~^ - _ ~ - _ ~~^ -
+ jgs  .  ~^ -_ ~^^ -_ ~ _ - _ ~^~-  _~ -_   ~- _ ~^ _ -  ~ ^-
+             ~^~ - _ ^ - ~~~ _ - _ ~-^ ~ __- ~_ - ~  ~^_-
+                 ~ ~- ^~ -  ~^ -  ~ ^~ - ~~  ^~ - ~
+----------------------------------------------------------------------
+
