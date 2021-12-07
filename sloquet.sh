@@ -464,6 +464,16 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
+NORM=$(norminette ../$1 2>&1)
+if echo "$NORM" | grep -qE '(Error|Warning)'
+then
+	echo "\033[31mnorminette KO \c\033[0m"
+	echo
+	echo "$NORM" | grep -E '(Error|Warning)' >> log_norminette
+else
+	echo "\033[32mnorminette OK \c\033[0m"
+	echo
+fi
 echo "\033[34m"
 echo "Test completed"
 echo "Test 1 : brouette.txt"
