@@ -44,6 +44,7 @@ rm -rf ${po0} ${po1} ${po2} ${po3} ${po4}
 mkdir ${po0} ${po1} ${po2} ${po3} ${po4}
 #
 clear
+echo "Last update 07/12/21 16:35"
 echo "\033[34m"
 echo "                                                                     "
 echo "               _-====-__-======-__-========-_____-============-__    "
@@ -502,6 +503,7 @@ else
 	tail -n 1 ${po3}log10
 fi
 echo
+echo "END"
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
