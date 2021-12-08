@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   sq_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sloquet <sloquet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 14:16:54 by sloquet           #+#    #+#             */
-/*   Updated: 2021/12/05 19:29:12 by sloquet          ###   ########.fr       */
+/*   Updated: 2021/12/08 22:55:34 by sloquet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <pthread.h>
+//#include <pthread.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include "get_next_line.h"
@@ -24,9 +24,9 @@
 #endif
 
 #define GNL_CALL 10000
-
 #define THEN_DIFF 1 
 
+/*
 static void	ft_display_stats(void)
 {
 	pthread_attr_t	attr;
@@ -39,7 +39,7 @@ static void	ft_display_stats(void)
 	pthread_attr_getstacksize(&attr, &stacksize);
 	fprintf(stderr, "  STACK SIZE %ld bytes\n", stacksize);
 	pthread_attr_destroy(&attr);
-}
+}*/
 
 int	main(int ac, char **av)
 {
@@ -64,6 +64,5 @@ int	main(int ac, char **av)
 		free(line);
 	}
 	close(fd);
-	ft_display_stats();
 	return (0);
 }

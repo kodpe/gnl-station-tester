@@ -15,21 +15,12 @@ test_12=bigben.txt
 # gnl_out
 out_1=out_gnl_1.txt
 out_2=out_gnl_2.txt
-out_3=out_gnl_3.txt
-out_4=out_gnl_4.txt
-out_5=out_gnl_5.txt
-out_6=out_gnl_6.txt
-out_7=out_gnl_7.txt
-out_8=out_gnl_8.txt
-out_9=out_gnl_9.txt
-out_10=out_gnl_10.txt
-out_11=out_gnl_11.txt
-out_12=out_gnl_12.txt
 # path_out
 po0=out_0/
 po1=out_2/
 po2=out_42/
 po3=out_42000/
+po4=out_1/
 # exec
 NAME0="t0.esq"
 NAME1="t2.esq"
@@ -38,403 +29,191 @@ NAME3="t42000.esq"
 # valgrind
 VFLAGS="-s -q --track-origins=yes --leak-check=full --show-leak-kinds=all"
 # directory
-rm -rf ${po0} ${po1} ${po2} ${po3}
-mkdir ${po0} ${po1} ${po2} ${po3}
-#
+rm -rf ${po0} ${po1} ${po2} ${po3} ${po4}
+mkdir ${po0} ${po1} ${po2} ${po3} ${po4}
+# os name
+OSNAME=$(uname -s)
+VALG=
+S_VALG="0"
+if [ $OSNAME = "Linux" ]
+then
+	VALG="valgrind ${VFLAGS}"
+	S_VALG="1"
+fi
+
+compare () {
+	OUT=$1out_gnl_$3.txt
+	SRC=test/$2
+	N_TEST=$3
+	if cmp -s ${OUT} ${SRC}
+	then
+		if [ $N_TEST -gt "9" ] 
+		then
+			echo "\033[32m${N_TEST}.OK \c\033[0m"
+		else
+			echo "\033[32m ${N_TEST}.OK \c\033[0m"
+		fi
+	else
+		if [ $N_TEST -gt "9" ] 
+		then
+			echo "\033[31m${N_TEST}.KO \c\033[0m"
+		else
+			echo "\033[31m ${N_TEST}.KO \c\033[0m"
+		fi
+	fi
+}
+
+valg_check () {
+	LOG=${1}log${3}
+	VALGRIND_ON=$2
+	N_TEST=$3
+	if [ $VALGRIND_ON = "1" ]
+	then
+		if [ $(wc -l < ${LOG}) = "1" ]
+		then
+			if [ $N_TEST -gt "9" ] 
+			then
+				echo "\033[32m${N_TEST}.MOK \c\033[0m"
+			else
+				echo "\033[32m ${N_TEST}.MOK \c\033[0m"
+			fi
+		else
+			if [ $N_TEST -gt "9" ] 
+			then
+				echo "\033[31m${N_TEST}.MKO \c\033[0m"
+			else
+				echo "\033[31m ${N_TEST}.MKO \c\033[0m"
+			fi
+		fi
+		tail -n 1 ${LOG} 
+	fi
+}
+
+test () {
+	VFLAGS="-s -q --track-origins=yes --leak-check=full --show-leak-kinds=all"
+	OSNAME=$(uname -s)
+	VALG=
+	S_VALG="0"
+	if [ $OSNAME = "Linux" ]
+	then
+		VALG="valgrind ${VFLAGS}"
+		S_VALG="1"
+	fi
+	BUFFER_SIZE=$1
+	SRC_NAME=$2
+	N_TEST=$3
+	EXEC_NAME=t$BUFFER_SIZE.esq
+	FILE_TEST=test/$SRC_NAME
+	OUT=out_$BUFFER_SIZE/out_gnl_$N_TEST.txt
+	LOG=out_$BUFFER_SIZE/log$N_TEST
+	D_OUT=out_$BUFFER_SIZE/
+	${VALG} ./${EXEC_NAME} ${FILE_TEST} 1> ${OUT} 2> ${LOG}
+	compare ${D_OUT} ${SRC_NAME} ${N_TEST}
+	valg_check ${D_OUT} ${S_VALG} ${N_TEST} 
+}
+
+norme_check () {
+	NORM=$(norminette ../*.c ../*.h $1 2>&1)
+	if echo "$NORM" | grep -qE '(Error|Warning)'
+	then
+		echo "\033[31mKO norminette \c\033[0m"
+		echo
+		echo "$NORM" | grep -E '(Error|Warning)' >> log_norminette
+	else
+		echo "\033[32mOK norminette \c\033[0m"
+		echo
+	fi
+	echo
+}
+
 clear
-echo "\033[34m"
-echo "               _-====-__-======-__-========-_____-============-__    "
-echo "             _(                                                 _)   "
-echo "          OO(                                                   )_   "
-echo "         0  (_                 GNL STATION TEST                  _)  "
-echo "         O    (_                                                _)   "
-echo "       o0    (_                                               _)     "
-echo "      o        '=-____-===-_____-========-_________-=======-='       "
+#
+echo "\033[34m               -====-__-======-__-=========-_____-===========-__"
+echo "             _(                                                 )_   "
+echo "          O0(_                 GNL STATION TEST                  _)  "
+echo "         O    (_                                               _)    "
+echo "      o0        '=-____-===-_____-========-_________-=======-='      "
 echo "    .o                                _________                      "
-echo "  '. ______          ______________  |         |      _____          "
+echo "  '. ______          ______________  |    DO   |      _____          "
 echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
-echo "(BNSF 1995| |      | |            | __Y______00_| |_         _|      "
+echo "( GNL 2022| |  YOU | |     CAN    | __Y______00_| |_   IT!   _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 07/12/21 20:23                        Art by Donovan Bake"
-echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "Last update 08/12/21 22:42                        Art by Donovan Bake"
+echo "\033[34m_______________________________________________________________________\033[0m"
 echo "\033[34mBUFFER SIZE = 0 \033[0m"
 # ---------- TEST 1 ----------
-valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
-if cmp -s ${po0}${out_1} ${path_test}${test_5}
-then
-#echo "\033[34m" && diff -s ${po0}${out_1} ${path_test}${test_5}
-	echo "\033[32m1.OK \c\033[0m"
-	tail -n 1 ${po0}log1
-else
-	echo "\033[31m1.KO \c\033[0m"
-	tail -n 1 ${po0}log1
-fi
+${VALG} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
+compare ${po0} ${test_5} 1
+valg_check ${po0} ${S_VALG} 1
 # ---------- TEST 2 ----------
-valgrind ${VFLAGS} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
-if cmp -s ${po0}${out_2} ${path_test}${test_5}
-then
-#echo "\033[34m" && diff -s ${po0}${out_2} ${path_test}${test_5}
-	echo "\033[32m2.OK \c\033[0m"
-	tail -n 1 ${po0}log2
-else
-	echo "\033[31m2.KO \c\033[0m"
-	tail -n 1 ${po0}log2
-fi
+${VALG} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
+compare ${po0} ${test_5} 2
+valg_check ${po0} ${S_VALG} 2
 echo
-echo "\033[34m_______________________________________________________________________________\033[0m"
+echo "\033[34mBUFFER SIZE = 1 \033[0m"
+test 1 ${test_1} 1
+test 1 ${test_2} 2
+test 1 ${test_3} 3
+test 1 ${test_4} 4
+test 1 ${test_5} 5
+test 1 ${test_6} 6
+test 1 ${test_7} 7
+test 1 ${test_8} 8
+test 1 ${test_9} 9
+test 1 ${test_10} 10 
+echo
 echo "\033[34mBUFFER SIZE = 2 \033[0m"
-# ---------- TEST 1 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_1} 1> ${po1}${out_1} 2> ${po1}log1
-if cmp -s ${po1}${out_1} ${path_test}${test_1}
-then
-#echo "\033[34m" && diff -s ${po1}${out_1} ${path_test}${test_1}
-	echo "\033[32m1.OK \c\033[0m"
-	tail -n 1 ${po1}log1
-else
-	echo "\033[31m1.KO \c\033[0m"
-	tail -n 1 ${po1}log1
-fi
-# ---------- TEST 2 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_2} 1> ${po1}${out_2} 2> ${po1}log2
-if cmp -s ${po1}${out_2} ${path_test}${test_2}
-then
-#echo "\033[34m" && diff -s ${po1}${out_2} ${path_test}${test_2}
-	echo "\033[32m2.OK \c\033[0m"
-	tail -n 1 ${po1}log2
-else
-	echo "\033[31m2.KO \c\033[0m"
-	tail -n 1 ${po1}log2
-fi
-# ---------- TEST 3 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_3} 1> ${po1}${out_3} 2> ${po1}log3
-if cmp -s ${po1}${out_3} ${path_test}${test_3}
-then
-#echo "\033[34m" && diff -s ${po1}${out_3} ${path_test}${test_3}
-	echo "\033[32m3.OK \c\033[0m"
-	tail -n 1 ${po1}log3
-else
-	echo "\033[31m3.KO \c\033[0m"
-	tail -n 1 ${po1}log3
-fi
-# ---------- TEST 4 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_4} 1> ${po1}${out_4} 2> ${po1}log4
-if cmp -s ${po1}${out_4} ${path_test}${test_4}
-then
-#echo "\033[34m" && diff -s ${po1}${out_4} ${path_test}${test_4}
-	echo "\033[32m4.OK \c\033[0m"
-	tail -n 1 ${po1}log4
-else
-	echo "\033[31m4.KO \c\033[0m"
-	tail -n 1 ${po1}log4
-fi
-# ---------- TEST 5 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_5} 1> ${po1}${out_5} 2> ${po1}log5
-if cmp -s ${po1}${out_5} ${path_test}${test_5}
-then
-#echo "\033[34m" && diff -s ${po1}${out_5} ${path_test}${test_5}
-	echo "\033[32m5.OK \c\033[0m"
-	tail -n 1 ${po1}log5
-else
-	echo "\033[31m5.KO \c\033[0m"
-	tail -n 1 ${po1}log5
-fi
-# ---------- TEST 6 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_6} 1> ${po1}${out_6} 2> ${po1}log6
-if cmp -s ${po1}${out_6} ${path_test}${test_6}
-then
-#echo "\033[34m" && diff -s ${po1}${out_6} ${path_test}${test_6}
-	echo "\033[32m6.OK \c\033[0m"
-	tail -n 1 ${po1}log6
-else
-	echo "\033[31m6.KO \c\033[0m"
-	tail -n 1 ${po1}log6
-fi
-# ---------- TEST 7 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_7} 1> ${po1}${out_7} 2> ${po1}log7
-if cmp -s ${po1}${out_7} ${path_test}${test_7}
-then
-#echo "\033[34m" && diff -s ${po1}${out_7} ${path_test}${test_7}
-	echo "\033[32m7.OK \c\033[0m"
-	tail -n 1 ${po1}log7
-else
-	echo "\033[31m7.KO \c\033[0m"
-	tail -n 1 ${po1}log7
-fi
-# ---------- TEST 8 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_8} 1> ${po1}${out_8} 2> ${po1}log8
-if cmp -s ${po1}${out_8} ${path_test}${test_8}
-then
-#echo "\033[34m" && diff -s ${po1}${out_8} ${path_test}${test_8}
-	echo "\033[32m8.OK \c\033[0m"
-	tail -n 1 ${po1}log8
-else
-	echo "\033[31m8.KO \c\033[0m"
-	tail -n 1 ${po1}log8
-fi
-# ---------- TEST 9 ----------
-valgrind ${VFLAGS} ./${NAME1} ${path_test}${test_9} 1> ${po1}${out_9} 2> ${po1}log9
-if cmp -s ${po1}${out_9} ${path_test}${test_9}
-then
-#echo "\033[34m" && diff -s ${po1}${out_9} ${path_test}${test_9}
-	echo "\033[32m9.OK \c\033[0m"
-	tail -n 1 ${po1}log9
-else
-	echo "\033[31m9.KO \c\033[0m"
-	tail -n 1 ${po1}log9
-fi
+test 2 ${test_1} 1
+test 2 ${test_2} 2
+test 2 ${test_3} 3
+test 2 ${test_4} 4
+test 2 ${test_5} 5
+test 2 ${test_6} 6
+test 2 ${test_7} 7
+test 2 ${test_8} 8
+test 2 ${test_9} 9
+test 2 ${test_10} 10 
 echo
-echo "\033[34m_______________________________________________________________________________\033[0m"
 echo "\033[34mBUFFER SIZE = 42 \033[0m"
-# ---------- TEST 1 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_1} 1> ${po2}${out_1} 2> ${po2}log1
-if cmp -s ${po2}${out_1} ${path_test}${test_1}
-then
-	echo "\033[32m1.OK \c\033[0m"
-	tail -n 1 ${po2}log1
-else
-	echo "\033[31m1.KO \c\033[0m"
-	tail -n 1 ${po2}log1
-fi
-# ---------- TEST 2 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_2} 1> ${po2}${out_2} 2> ${po2}log2
-if cmp -s ${po2}${out_2} ${path_test}${test_2}
-then
-	echo "\033[32m2.OK \c\033[0m"
-	tail -n 1 ${po2}log2
-else
-	echo "\033[31m2.KO \c\033[0m"
-	tail -n 1 ${po2}log2
-fi
-# ---------- TEST 3 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_3} 1> ${po2}${out_3} 2> ${po2}log3
-if cmp -s ${po2}${out_3} ${path_test}${test_3}
-then
-	echo "\033[32m3.OK \c\033[0m"
-	tail -n 1 ${po2}log3
-else
-	echo "\033[31m3.KO \c\033[0m"
-	tail -n 1 ${po2}log3
-fi
-# ---------- TEST 4 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_4} 1> ${po2}${out_4} 2> ${po2}log4
-if cmp -s ${po2}${out_4} ${path_test}${test_4}
-then
-	echo "\033[32m4.OK \c\033[0m"
-	tail -n 1 ${po2}log4
-else
-	echo "\033[31m4.KO \c\033[0m"
-	tail -n 1 ${po2}log4
-fi
-# ---------- TEST 5 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_5} 1> ${po2}${out_5} 2> ${po2}log5
-if cmp -s ${po2}${out_5} ${path_test}${test_5}
-then
-	echo "\033[32m5.OK \c\033[0m"
-	tail -n 1 ${po2}log5
-else
-	echo "\033[31m5.KO \c\033[0m"
-	tail -n 1 ${po2}log5
-fi
-# ---------- TEST 6 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_6} 1> ${po2}${out_6} 2> ${po2}log6
-if cmp -s ${po2}${out_6} ${path_test}${test_6}
-then
-	echo "\033[32m6.OK \c\033[0m"
-	tail -n 1 ${po2}log6
-else
-	echo "\033[31m6.KO \c\033[0m"
-	tail -n 1 ${po2}log6
-fi
-# ---------- TEST 7 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_7} 1> ${po2}${out_7} 2> ${po2}log7
-if cmp -s ${po2}${out_7} ${path_test}${test_7}
-then
-	echo "\033[32m7.OK \c\033[0m"
-	tail -n 1 ${po2}log7
-else
-	echo "\033[31m7.KO \c\033[0m"
-	tail -n 1 ${po2}log7
-fi
-# ---------- TEST 8 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_8} 1> ${po2}${out_8} 2> ${po2}log8
-if cmp -s ${po2}${out_8} ${path_test}${test_8}
-then
-	echo "\033[32m8.OK \c\033[0m"
-	tail -n 1 ${po2}log8
-else
-	echo "\033[31m8.KO \c\033[0m"
-	tail -n 1 ${po2}log8
-fi
-# ---------- TEST 9 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_9} 1> ${po2}${out_9} 2> ${po2}log9
-if cmp -s ${po2}${out_9} ${path_test}${test_9}
-then
-	echo "\033[32m9.OK \c\033[0m"
-	tail -n 1 ${po2}log9
-else
-	echo "\033[31m9.KO \c\033[0m"
-	tail -n 1 ${po2}log9
-fi
-# ---------- TEST 10 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_10} 1> ${po2}${out_10} 2> ${po2}log10
-if cmp -s ${po2}${out_10} ${path_test}${test_10}
-then
-	echo "\033[32m10.OK \c\033[0m"
-	tail -n 1 ${po2}log10
-else
-	echo "\033[31m10.KO \c\033[0m"
-	tail -n 1 ${po2}log10
-fi
-# ---------- TEST 11 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_11} 1> ${po2}${out_11} 2> ${po2}log11
-if cmp -s ${po2}${out_11} ${path_test}${test_11}
-then
-	echo "\033[32m11.OK \c\033[0m"
-	tail -n 1 ${po2}log11
-else
-	echo "\033[31m11.KO \c\033[0m"
-	tail -n 1 ${po2}log11
-fi
-# ---------- TEST 12 ----------
-valgrind ${VFLAGS} ./${NAME2} ${path_test}${test_12} 1> ${po2}${out_12} 2> ${po2}log12
-if cmp -s ${po2}${out_12} ${path_test}${test_12}
-then
-	echo "\033[32m12.OK \c\033[0m"
-	tail -n 1 ${po2}log12
-else
-	echo "\033[31m12.KO \c\033[0m"
-	tail -n 1 ${po2}log12
-fi
+test 42 ${test_1} 1 
+test 42 ${test_2} 2 
+test 42 ${test_3} 3 
+test 42 ${test_4} 4 
+test 42 ${test_5} 5 
+test 42 ${test_6} 6 
+test 42 ${test_7} 7 
+test 42 ${test_9} 8 
+test 42 ${test_9} 9 
+test 42 ${test_10} 10 
+test 42 ${test_11} 11 
+test 42 ${test_12} 12
 echo
-echo "\033[34m_______________________________________________________________________________\033[0m"
 echo "\033[34mBUFFER SIZE = 42000 \033[0m"
-# ---------- TEST 1 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_1} 1> ${po3}${out_1} 2> ${po3}log1
-if cmp -s ${po3}${out_1} ${path_test}${test_1}
-then
-	echo "\033[32m1.OK \c\033[0m"
-	tail -n 1 ${po3}log1
-else
-	echo "\033[31m1.KO \c\033[0m"
-	tail -n 1 ${po3}log1
-fi
-# ---------- TEST 2 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_2} 1> ${po3}${out_2} 2> ${po3}log2
-if cmp -s ${po3}${out_2} ${path_test}${test_2}
-then
-	echo "\033[32m2.OK \c\033[0m"
-	tail -n 1 ${po3}log2
-else
-	echo "\033[31m2.KO \c\033[0m"
-	tail -n 1 ${po3}log2
-fi
-# ---------- TEST 3 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_3} 1> ${po3}${out_3} 2> ${po3}log3
-if cmp -s ${po3}${out_3} ${path_test}${test_3}
-then
-	echo "\033[32m3.OK \c\033[0m"
-	tail -n 1 ${po3}log3
-else
-	echo "\033[31m3.KO \c\033[0m"
-	tail -n 1 ${po3}log3
-fi
-# ---------- TEST 4 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_4} 1> ${po3}${out_4} 2> ${po3}log4
-if cmp -s ${po3}${out_4} ${path_test}${test_4}
-then
-	echo "\033[32m4.OK \c\033[0m"
-	tail -n 1 ${po3}log4
-else
-	echo "\033[31m4.KO \c\033[0m"
-	tail -n 1 ${po3}log4
-fi
-# ---------- TEST 5 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_5} 1> ${po3}${out_5} 2> ${po3}log5
-if cmp -s ${po3}${out_5} ${path_test}${test_5}
-then
-	echo "\033[32m5.OK \c\033[0m"
-	tail -n 1 ${po3}log5
-else
-	echo "\033[31m5.KO \c\033[0m"
-	tail -n 1 ${po3}log5
-fi
-# ---------- TEST 6 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_6} 1> ${po3}${out_6} 2> ${po3}log6
-if cmp -s ${po3}${out_6} ${path_test}${test_6}
-then
-	echo "\033[32m6.OK \c\033[0m"
-	tail -n 1 ${po3}log6
-else
-	echo "\033[31m6.KO \c\033[0m"
-	tail -n 1 ${po3}log6
-fi
-# ---------- TEST 7 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_7} 1> ${po3}${out_7} 2> ${po3}log7
-if cmp -s ${po3}${out_7} ${path_test}${test_7}
-then
-	echo "\033[32m7.OK \c\033[0m"
-	tail -n 1 ${po3}log7
-else
-	echo "\033[31m7.KO \c\033[0m"
-	tail -n 1 ${po3}log7
-fi
-# ---------- TEST 8 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_8} 1> ${po3}${out_8} 2> ${po3}log8
-if cmp -s ${po3}${out_8} ${path_test}${test_8}
-then
-	echo "\033[32m8.OK \c\033[0m"
-	tail -n 1 ${po3}log8
-else
-	echo "\033[31m8.KO \c\033[0m"
-	tail -n 1 ${po3}log8
-fi
-# ---------- TEST 9 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_9} 1> ${po3}${out_9} 2> ${po3}log9
-if cmp -s ${po3}${out_9} ${path_test}${test_9}
-then
-	echo "\033[32m9.OK \c\033[0m"
-	tail -n 1 ${po3}log9
-else
-	echo "\033[31m9.KO \c\033[0m"
-	tail -n 1 ${po3}log9
-fi
-# ---------- TEST 10 ----------
-valgrind ${VFLAGS} ./${NAME3} ${path_test}${test_10} 1> ${po3}${out_10} 2> ${po3}log10
-if cmp -s ${po3}${out_10} ${path_test}${test_10}
-then
-	echo "\033[32m10.OK \c\033[0m"
-	tail -n 1 ${po3}log10
-else
-	echo "\033[31m10.KO \c\033[0m"
-	tail -n 1 ${po3}log10
-fi
+test 42000 ${test_1} 1 
+test 42000 ${test_2} 2 
+test 42000 ${test_3} 3 
+test 42000 ${test_4} 4 
+test 42000 ${test_5} 5 
+test 42000 ${test_6} 6 
+test 42000 ${test_7} 7 
+test 42000 ${test_8} 8 
+test 42000 ${test_9} 9 
 echo
-echo "\033[34m_______________________________________________________________________________\033[0m"
-NORM=$(norminette ../*.c ../*.h $1 2>&1)
-if echo "$NORM" | grep -qE '(Error|Warning)'
-then
-	echo "\033[31mKO norminette \c\033[0m"
-	echo
-	echo "$NORM" | grep -E '(Error|Warning)' >> log_norminette
-else
-	echo "\033[32mOK norminette \c\033[0m"
-	echo
-fi
-echo "\033[34m"
-echo "Test 1  : brouette.txt"
-echo "Test 2  : lol.txt            \|/          (__)               "
-echo "Test 3  : oneline.txt             '(------(oo)       mooooh !"
-echo "Test 4  : uuu.txt                   ||    (__)               "
-echo "Test 5  : empty.txt                 ||w--||    \|/           "
-echo "Test 6  : newlineworld.txt      \|/                          "
+echo "\033[34m_______________________________________________________________________\033[0m"
+norme_check
+echo "\033[34mTest 1  : brouette.txt"
+echo "Test 2  : lol.txt            \|/          (__)              "
+echo "Test 3  : oneline.txt             '(------(oo)       moooh !"
+echo "Test 4  : uuu.txt                   ||    (__)              "
+echo "Test 5  : empty.txt                 ||w--||    \|/          "
+echo "Test 6  : newlineworld.txt      \|/                         "
 echo "Test 7  : onechar.txt"
 echo "Test 8  : twochar.txt"
 echo "Test 9  : linew.txt"
 echo "Test 10 : b.txt"
 echo "Test 11 : bg.txt"
-echo "Test 12 : bigben.txt"
-echo "\033[0m"
+echo "Test 12 : bigben.txt\033[0m"
 # end
 rm -f get_next_line.h
 rm -f sq_get_next_line.c
