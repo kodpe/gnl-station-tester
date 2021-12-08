@@ -1,9 +1,11 @@
-# 42test_gnl_station_linux_2021
+gnl_station_2021
 
 clone in your gnl repo then "make"
 
-/ ! \ works only on linux and do not test bonus
+08/12/21  - now works on macOS (without valgrind) and linux
+          - add tests
+          - still not testing the bonus part
 
-![alt text](https://i.imgur.com/wNI48RZ.png)
+![alt text](https://i.imgur.com/JLAlL16.png)
 
 
