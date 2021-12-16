@@ -113,7 +113,7 @@ test () {
 }
 
 norme_check () {
-	NORM=$(norminette ../*.c ../*.h $1 2>&1)
+	NORM=$(norminette ../get_next_line.c ../get_next_line.h ../get_next_line_utils.c $1 2>&1)
 	if echo "$NORM" | grep -qE '(Error|Warning)'
 	then
 		echo "\033[31mKO norminette \c\033[0m"
@@ -139,7 +139,7 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "( GNL 2022| |  YOU | |     CAN    | __Y______00_| |_   IT!   _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 08/12/21 22:42                        Art by Donovan Bake"
+echo "Last update 16/12/21 19:30                        Art by Donovan Bake"
 echo "\033[34m_______________________________________________________________________\033[0m"
 echo "\033[34mBUFFER SIZE = 0 \033[0m"
 # ---------- TEST 1 ----------
