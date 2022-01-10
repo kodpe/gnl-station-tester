@@ -2,7 +2,7 @@ gnl_station_2021
 
 > clone in your gnl repo then "make"
 
-- now works on linux (with valgrind summary) and macOS
+- works on linux (with valgrind summary) and macOS (without leaks check)
 - better tests
 - still not testing the bonus part
 
