@@ -1,4 +1,4 @@
-gnl_station_2021
+gnl_station_2022
 
 ```
 git clone https://github.com/kodpe/42test-gnl-station-2022.git
