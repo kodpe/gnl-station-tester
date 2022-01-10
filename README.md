@@ -1,5 +1,9 @@
 gnl_station_2021
 
+```
+git clone https://github.com/kodpe/42test-gnl-station-2022.git
+```
+
 > clone in your gnl repo then "make"
 
 - Linux (with valgrind summary)
