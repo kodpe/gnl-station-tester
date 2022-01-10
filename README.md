@@ -1,8 +1,10 @@
 gnl_station_2022
 
-## install
 ```
 git clone https://github.com/kodpe/42test-gnl-station-2022.git
+```
+```
+cd 42test-gnl-station-2022
 ```
 
 > clone in your gnl repo then "make"
