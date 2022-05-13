@@ -1,4 +1,4 @@
-## gnl_station_2022
+## gnl station 2022
 
 clone in your gnl repo then "make"
 
@@ -6,8 +6,9 @@ clone in your gnl repo then "make"
 git clone https://github.com/kodpe/42test-gnl-station-2022.git
 ```
 
-- Linux (with valgrind summary)
-- macOS (without leaks check)
+- Ubuntu (with valgrind summary)
+
+- macOS (DEPRECATED / no leaks check)
 
 - do not test the bonus part
 
