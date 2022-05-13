@@ -75,44 +75,6 @@ Sommaire
 Éléments d’histoire de la brouette
 La question des origines
 
-Brouette et brancard représentés par Matthew Paris dans son livre Life of St Alban.
-En histoire, et surtout en histoire des techniques, il est souvent dangereux de supposer forcément ancien ce qui paraît aller naturellement de soi : l’histoire de la brouette semble s’inscrire dans ce principe1.
-
-Étymologiquement, une brouette est un véhicule à deux roues. Le terme, qui apparaît au xive siècle, serait un diminutif de beroue, lui-même venant du bas latin birota, véhicule à deux roues1.
-
-L’engin serait une invention chinoise du début de l’ère chrétienne, soit environ dix siècles avant qu’elle ne fasse son apparition en Europe2. Cependant, les sinologues restent souvent flous, voire contradictoires dans leurs affirmations ; les images sont souvent tardives. Le général Zhuge Liang (181-234), de la période des Trois Royaumes (iiie siècle) aurait ravitaillé ses armées et transporté ses blessés avec des brouettes, tâche qui paraît pourtant mal convenir à l’engin plutôt performant pour le transport de charges sur de courtes distances. Ils auraient aussi inventé une brouette dotée d’un petit mât et comportant une voile, censée diminuer l’effort humain lorsque le vent est favorable.
-
-La première représentation date du milieu du xiiie siècle et nous ne disposons ni de représentations figurées ni de textes précis antérieurs à cette date. La relative abondance des représentations dans la seconde moitié du xiiie siècle laisse supposer une apparition dans la première moitié de ce siècle.
-
-Dans aucune scène agricole, domaine où les miniatures sont nombreuses, on ne voit de brouettes. Les représentations de travaux miniers, où la brouette tiendra une place importante, sont inexistantes avant le xvie siècle6. Il existe des légendes qui attribuent l’objet à un certain Dupin voire à Pascal, tous deux vers 1650. En fait, on nommait ironiquement7 « brouette » ou « vinaigrette » une chaise à porteur à deux roues apparue à cette époque8 et l’invention en a été effectivement attribuée à Pascal, même si aucune source sérieuse ne le confirme.
-
-Une diffusion assez lente
-
-Chantier de construction de la basilique Sainte-Marie-Madeleine de Vézelay illustré entre 1448 et 1465.
-Malgré l’intérêt évident de l’engin, toujours utilisé dans les campagnes et sur les chantiers, la diffusion de la brouette semble avoir été assez lente et pour des usages limités, comme le suggèrent des illustrations plus tardives où coexistent encore le brancard et la brouette. Il se pourrait que la brouette (véhicule à une roue) n’ait pas été très répandue avant le xve siècle, date à partir de laquelle on constate nombre de mentions4. Aucune représentation de l’engin n’est visible dans les carnets des « ingénieurs » de la Renaissance.
-
-En 1798, à l’époque de l’expédition de Bonaparte au Caire, Abd al-Rahman al-Jabarti, consignera dans son journal les preuves de sa méconnaissance de l’outil9 :
-
-« Ils [les Français] recouraient à des instruments faciles à manier et épargnant la peine, ce qui permettait une exécution rapide des travaux. Ainsi, au lieu de paniers ou de récipients, ils utilisaient de petites charrettes qui avaient deux bras allongés par-derrière ; on les remplissait de terre, d’argile ou de pierres […] ensuite on prenait en main les deux bras, on poussait devant soi et la charrette roulait sur sa roue avec la moindre peine jusqu’au chantier ; on les vidait enfin, en la penchant d’une main, sans aucune fatigue. »
-
-En 1821, des agronomes français regrettaient qu’elle ne soit pas connue dans plusieurs régions françaises.
-
-La brouette ne s’est pas imposée partout.
-Plus tard, les économistes s'empareront du débat pour souligner cette lenteur dans la diffusion de l'engin qui semble paradoxale au regard de sa simplicité technique. Angus Maddison10, s'interrogeant sur les origines de disparités de développement prend l'exemple de la brouette pour souligner l'importance du processus d'imitation. Selon lui, la brouette serait passée de la Chine vers l'Europe, mais des siècles après, malgré les contacts privilégiés entre l'Inde et l'Occident : les charges restaient portées sur la tête par les travailleurs indiens, comme elles le sont d'ailleurs toujours en Afrique.
-
-Les archéologues de l'Institut français d'archéologie orientale du Caire se heurtent aujourd'hui au même type de difficultés que leurs prédécesseurs lorsqu'ils prescrivent l'utilisation de la brouette sur leur chantier de fouille9.
-
-Si le principe mis en œuvre est resté le même, l'objet a connu quelques améliorations depuis : brouette motorisée, brouette pliante ou brouette à roue équipée d'un pneumatique. James Dyson a proposé en 1974 la Ballbarrow : une brouette à roue sphérique11.
-
-Une variation moderne de la brouette est atteinte en février 1971 par les astronautes d'Apollo 14 qui font usage d'un Mobile Equipment Transporter, ou « brouette lunaire », pour transporter les échantillons de roches lunaires.
-
-Étude technologique de la brouette
-Analyse fonctionnelle
-Fonction principale, définition
-La brouette répond au besoin « augmenter la capacité de transport d’objets divers par un homme seul, sur voie à aménagement rudimentaire. » On peut donc la définir comme objet technique « agent de transport » permettant d’augmenter, etc.
-
-Remarque : comme pour pratiquement tout objet technique, ce n’est pas la seule réponse à ce besoin, de même que l’objet technique ne porte pas en lui sa fonction principale, et peut donc être utilisé à bien d’autres choses13.
-
 Variantes selon le nombre de roues
 Si la brouette selon son étymologie a deux roues, c’est surtout lorsqu’elle n’en a qu’une qu’elle se caractérise comme « brouette. » Toutefois, quand elle a deux roues, celles-ci sont coaxiales.
 Critiques : La brouette à deux roues permet de plus grandes contenances, plus stable elle peut se conduire d’une seule main mais elle est très difficile, voire éprouvante, à mener sur les terrains accidentés tandis que la brouette à une roue se joue des irrégularités du terrain. Par ailleurs la place nécessaire pour manœuvrer la brouette à deux roues dépend de la largeur de l’essieu.
