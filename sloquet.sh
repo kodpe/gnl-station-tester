@@ -1,17 +1,17 @@
 # gnl test
 path_test=test/
-test_1=brouette.txt
-test_2=lol.txt
-test_3=oneline.txt
-test_4=uuu.txt
-test_5=empty.txt
-test_6=newlineworld.txt
-test_7=onechar.txt
-test_8=twochar.txt
-test_9=linew.txt
-test_10=b.txt
-test_11=bg.txt
-test_12=bigben.txt
+test_1=1-brouette.txt
+test_2=2-otarie.txt
+test_3=3-oneline.txt
+test_4=4-u.txt
+test_5=5-empty.txt
+test_6=6-newline.txt
+test_7=7-onechar.txt
+test_8=8-twochar.txt
+test_9=9-linew.txt
+test_10=10-b.txt
+test_11=11-bg.txt
+test_12=12-bigben.txt
 # gnl_out
 out_1=out_gnl_1.txt
 out_2=out_gnl_2.txt
@@ -64,7 +64,7 @@ compare () {
 }
 
 valg_check () {
-	LOG=${1}log${3}
+	LOG=${1}leaks_log${3}
 	VALGRIND_ON=$2
 	N_TEST=$3
 	if [ $VALGRIND_ON = "1" ]
@@ -77,6 +77,8 @@ valg_check () {
 			else
 				echo "\033[32m ${N_TEST}.MOK \c\033[0m"
 			fi
+			tail -n 1 ${LOG} | awk -F' ' '{print $1" leaks summary: "$4" "$5" "$6" "$7" "$8}'
+			rm ${LOG}
 		else
 			if [ $N_TEST -gt "9" ] 
 			then
@@ -84,8 +86,8 @@ valg_check () {
 			else
 				echo "\033[31m ${N_TEST}.MKO \c\033[0m"
 			fi
+			tail -n 1 ${LOG} | awk -F' ' '{print $1" leaks summary: "$4" "$5" "$6" "$7" "$8}'
 		fi
-		tail -n 1 ${LOG} | awk -F' ' '{print $1" leaks summary: "$4" "$5" "$6" "$7" "$8}'
 	fi
 }
 
@@ -105,7 +107,7 @@ test () {
 	EXEC_NAME=t$BUFFER_SIZE.esq
 	FILE_TEST=test/$SRC_NAME
 	OUT=out_$BUFFER_SIZE/out_gnl_$N_TEST.txt
-	LOG=out_$BUFFER_SIZE/log$N_TEST
+	LOG=out_$BUFFER_SIZE/leaks_log$N_TEST
 	D_OUT=out_$BUFFER_SIZE/
 	${VALG} ./${EXEC_NAME} ${FILE_TEST} 1> ${OUT} 2> ${LOG}
 	compare ${D_OUT} ${SRC_NAME} ${N_TEST}
@@ -139,15 +141,15 @@ echo " _()_||__|| ________ |            |  |_________|   __||___||__       "
 echo "( GNL 2022| |  YOU | |     CAN    | __Y______00_| |_   IT!   _|      "
 echo "/-OO----OO''='OO--OO'='OO--------OO'='OO-------OO'='OO-------OO'=P   "
 echo "#####################################################################"
-echo "Last update 13/05/22 15:18                        Art by Donovan Bake"
+echo "Last update 13/05/22 15:42                        Art by Donovan Bake"
 echo "\033[34m_______________________________________________________________________\033[0m"
 echo "\033[34mBUFFER SIZE = 0 \033[0m"
 # ---------- TEST 1 ----------
-${VALG} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}log1
+${VALG} ./${NAME0} ${path_test}${test_1} 1> ${po0}${out_1} 2> ${po0}leaks_log1
 compare ${po0} ${test_5} 1
 valg_check ${po0} ${S_VALG} 1
 # ---------- TEST 2 ----------
-${VALG} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}log2
+${VALG} ./${NAME0} ${path_test}${test_2} 1> ${po0}${out_2} 2> ${po0}leaks_log2
 compare ${po0} ${test_5} 2
 valg_check ${po0} ${S_VALG} 2
 echo
@@ -199,15 +201,16 @@ test 42000 ${test_6} 6
 test 42000 ${test_7} 7 
 test 42000 ${test_8} 8 
 test 42000 ${test_9} 9 
+test 42000 ${test_10} 10 
 echo
 echo "\033[34m_______________________________________________________________________\033[0m"
 norme_check
 echo "\033[34mTest 1  : brouette.txt"
-echo "Test 2  : lol.txt            \|/          (__)              "
+echo "Test 2  : otarie.txt         \|/          (__)              "
 echo "Test 3  : oneline.txt             '(------(oo)       moooh !"
-echo "Test 4  : uuu.txt                   ||    (__)              "
+echo "Test 4  : u.txt                     ||    (__)              "
 echo "Test 5  : empty.txt                 ||w--||    \|/          "
-echo "Test 6  : newlineworld.txt      \|/                         "
+echo "Test 6  : newline.txt           \|/                         "
 echo "Test 7  : onechar.txt"
 echo "Test 8  : twochar.txt"
 echo "Test 9  : linew.txt"
