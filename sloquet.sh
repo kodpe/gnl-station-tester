@@ -85,7 +85,7 @@ valg_check () {
 				echo "\033[31m ${N_TEST}.MKO \c\033[0m"
 			fi
 		fi
-		tail -n 1 ${LOG} 
+		tail -n 1 ${LOG} | awk -F' ' '{print $1" leaks summary: "$4" "$5" "$6" "$7" "$8}'
 	fi
 }
 
