@@ -6,7 +6,7 @@ clone in your gnl repo then "make"
 git clone https://github.com/kodpe/42test-gnl-station-2022.git
 ```
 
-- Ubuntu (with valgrind summary)
+- Ubuntu (with leaks check)
 
 - macOS (DEPRECATED / no leaks check)
 
