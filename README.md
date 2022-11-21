@@ -7,9 +7,6 @@ git clone https://github.com/kodpe/42test-gnl-station-2022.git
 ```
 
 - Ubuntu (with leaks check)
-
-- macOS (DEPRECATED / no leaks check)
-
 - do not test the bonus part
 
 ![alt text](https://i.imgur.com/JLAlL16.png)
