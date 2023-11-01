@@ -185,7 +185,7 @@ test 42 ${test_4} 4
 test 42 ${test_5} 5 
 test 42 ${test_6} 6 
 test 42 ${test_7} 7 
-test 42 ${test_9} 8 
+test 42 ${test_8} 8 
 test 42 ${test_9} 9 
 test 42 ${test_10} 10 
 test 42 ${test_11} 11 
